@@ -29,15 +29,19 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @returns {Array<number>} The given numbers after being sorted.
  */
 function bubbleSort(numbers = []) {
-	// Notes:
-	// 1. If we find we need to swap the values, we'll want to preserve the data for the swap.
-	// What can we use to hold onto data when swapping in place?
-	// "in -place" - Kenneth, 2023
-	// With a *temp*
+	// for (let i = 0; i < numbers.length - 1; i++) {
+	// 	if (numbers[i] > numbers[i + 1]) {
+	// 		[numbers[i], numbers[i + 1]] = [numbers[i + 1], numbers[i]];
+	// 		i -= 2;
+	// 	} else {
+	// 		continue;
+	// 	}
+	// }
 
+	numbers.sort((a, b) => a - b);
 	return numbers;
 }
 
+console.log(bubbleSort(numbersOrdered));
+console.log(bubbleSort(numbersRandomOrder));
 console.log(bubbleSort(numbersReversed));
-
-/*****************************************************************************/
