@@ -56,20 +56,19 @@ const numbers4 = [2, 1];
  *    being processed.
  * @returns {number} The idx where left section of smaller items ends.
  */
-function quickSort2(arr = [], left = 0, right = arr.length - 1) {
-	const pivot = Math.floor(right / 2);
-	// moved pivot to end
-	[arr[pivot], arr[right]] = [arr[right], arr[pivot]];
-	right--;
+function quickSort2(arr = [], start = 0, end = arr.length - 1) {
+	const pivotValue = arr[right];
+	const pivotIndex = start;
 
-	while (left <= right) {
-		while (arr[left] < arr[pivot]) {
-			left++;
-		}
-		while (arr[right] > arr[pivot]) {
-			right--;
+	for (let i = start; i < end; i++) {
+		if (arr[i] < pivotValue) {
+			[arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+			pivotIndex++;
 		}
 	}
+
+	[arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
+	return pivotIndex;
 }
 
 // console.log(quickSort2(numbers1));
