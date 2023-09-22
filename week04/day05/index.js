@@ -43,9 +43,6 @@ const expected3 = [-1, -1]; // not found.
  *    If there were multiple solutions, the one with the longest song should be used.
  */
 function musicRuntime(busDuration, songDurations) {
-	// Hint: Remember we make sure the songs end 30 seconds before the bus ride ends, so we need to account for that.
-	// Using a bit of Math.max() could be useful~
-	// We're doing comparisons so a standard for loop may be the way to go. ☕
 	let result = [-1, -1];
 	let duration = busDuration - 30;
 	let maxSong = 0;
